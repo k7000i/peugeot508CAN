@@ -174,6 +174,8 @@ int main(void) {
     //sei();
 
 
+    // WARNING! be sure the correct settings otherwise you could damage your car! Never connect to Engine critical canbus!!!
+
     //uart_init();
     SPI_init(SPI_4MHz);
     reset();
@@ -212,10 +214,11 @@ int main(void) {
     //    clearCluster();
     //}
 
-
-    /*while (1) {
+    //Uncomment this if you want to see the can messages with serial monitor
+    while (1) {
         readMessage(&canmsg2);
-    }*/
+    }
+
     uint8_t is_active = 0;
     while (1) {
         readMessage(&canmsg2);

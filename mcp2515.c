@@ -276,6 +276,8 @@ ERROR readMessage(struct CAN_FRAME *frame) {
     frame->can_dlc = dlc;
     readRegisters(MCP_RXB0DATA, frame->can_data, dlc);
 
+
+    // Uncomment this if you want to pipe he can messages to python monitor script
     /*
     if (enable_debug == 1) {
         uart_putchar(0x55);
